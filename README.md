@@ -1,3 +1,12 @@
+# equicord-plugins
+
+Custom plugins for [Equicord](https://github.com/Equicord/Equicord).
+
+## Plugins
+
+- **AutoDelete**: delete your own messages in a channel, with human-like delays, a progress view and a stop button.
+- **HypeSquadSwitcher**: change or remove your HypeSquad badge (Bravery, Brilliance, Balance) straight from the plugin settings.
+
 ## Installation
 
 Requirements: [Node.js](https://nodejs.org), [pnpm](https://pnpm.io) and [git](https://git-scm.com).
