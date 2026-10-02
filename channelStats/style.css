@@ -1,0 +1,273 @@
+/* Local tokens: new Discord names first, then legacy names, then a hard fallback */
+.vc-chanstats-modal,
+.vc-chanstats-manage {
+    --cs-text: var(--text-default, var(--text-normal, #dbdee1));
+    --cs-text-strong: var(--text-strong, var(--header-primary, #f2f3f5));
+    --cs-muted: var(--text-muted, var(--text-low, #949ba4));
+    --cs-surface: var(--background-surface-high, var(--background-secondary-alt, rgba(255, 255, 255, 0.05)));
+    --cs-surface-low: var(--background-surface-higher, var(--background-secondary, rgba(255, 255, 255, 0.03)));
+    --cs-border: var(--border-subtle, var(--background-modifier-accent, rgba(255, 255, 255, 0.1)));
+    --cs-hover: var(--background-modifier-hover, rgba(255, 255, 255, 0.08));
+    --cs-brand: var(--brand-500, var(--brand-experiment, #5865f2));
+}
+
+.vc-chanstats-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    color: var(--cs-text);
+}
+
+/* ---------- period selector ---------- */
+
+.vc-chanstats-period-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.vc-chanstats-period-btn {
+    background: var(--cs-surface);
+    border: 1px solid var(--cs-border);
+    border-radius: 8px;
+    color: var(--cs-text-strong);
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.15s;
+}
+
+.vc-chanstats-period-btn:hover {
+    background: var(--cs-hover);
+}
+
+.vc-chanstats-period-btn-active,
+.vc-chanstats-period-btn-active:hover {
+    background: var(--cs-brand);
+    border-color: var(--cs-brand);
+    color: #fff;
+}
+
+/* ---------- cards ---------- */
+
+.vc-chanstats-stats-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.vc-chanstats-stats-row .vc-chanstats-stat-card {
+    flex: 1;
+    min-width: 120px;
+}
+
+.vc-chanstats-stat-card {
+    background: var(--cs-surface);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid var(--cs-border);
+}
+
+.vc-chanstats-empty {
+    margin-top: 8px;
+}
+
+/* ---------- top users ---------- */
+
+.vc-chanstats-top-users {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.vc-chanstats-user-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: var(--cs-surface-low);
+    border-radius: 8px;
+    border: 1px solid var(--cs-border);
+}
+
+.vc-chanstats-user-row-me {
+    border-color: var(--cs-brand);
+    background: color-mix(in srgb, var(--cs-brand) 14%, transparent);
+}
+
+.vc-chanstats-rank {
+    font-weight: 700;
+    color: var(--cs-muted);
+    width: 32px;
+    font-size: 13px;
+}
+
+.vc-chanstats-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.vc-chanstats-username {
+    flex: 1;
+    min-width: 0;
+    font-weight: 600;
+    color: var(--cs-text-strong);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vc-chanstats-copy-mention {
+    border: none;
+    cursor: pointer;
+    color: var(--cs-muted);
+    font-size: 11px;
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--cs-hover);
+}
+
+.vc-chanstats-count {
+    font-size: 13px;
+    color: var(--cs-text);
+    min-width: 90px;
+    text-align: right;
+}
+
+.vc-chanstats-count-pct {
+    color: var(--cs-muted);
+    font-size: 11px;
+}
+
+.vc-chanstats-bar-wrap {
+    width: 100px;
+    height: 6px;
+    background: var(--cs-hover);
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.vc-chanstats-bar {
+    height: 100%;
+    background: var(--cs-brand);
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+
+/* ---------- charts ---------- */
+
+.vc-chanstats-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 100px;
+    margin-top: 12px;
+}
+
+.vc-chanstats-chart-col {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vc-chanstats-chart-bar {
+    width: 80%;
+    min-width: 2px;
+    background: var(--cs-brand);
+    border-radius: 3px 3px 0 0;
+    transition: height 0.3s;
+    flex-shrink: 0;
+}
+
+.vc-chanstats-chart-bar-empty {
+    opacity: 0.25;
+}
+
+.vc-chanstats-chart-col:hover .vc-chanstats-chart-bar {
+    filter: brightness(1.2);
+}
+
+.vc-chanstats-chart-bar-peak {
+    background: var(--status-warning, #f59e0b);
+}
+
+.vc-chanstats-chart-label {
+    height: 16px;
+    line-height: 16px;
+    font-size: 10px;
+    color: var(--cs-muted);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ---------- settings: manage data ---------- */
+
+.vc-chanstats-manage {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--cs-text);
+}
+
+.vc-chanstats-manage-guild {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vc-chanstats-manage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vc-chanstats-manage-toggle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    background: none;
+    border: none;
+    padding: 4px 0;
+    cursor: pointer;
+    color: var(--cs-text-strong);
+    text-align: left;
+}
+
+.vc-chanstats-manage-name {
+    flex: 1;
+    min-width: 0;
+    color: var(--cs-text-strong);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vc-chanstats-manage-muted {
+    color: var(--cs-muted);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.vc-chanstats-manage-channel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    margin-left: 12px;
+    background: var(--cs-surface);
+    border-radius: 8px;
+    border: 1px solid var(--cs-border);
+}

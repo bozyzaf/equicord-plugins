@@ -24,7 +24,7 @@ const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 const humanDelay = () => Math.max(1000, settings.store.delay) + Math.random() * 2000;
 const batchDelay = () => 3000 + Math.random() * 3000;
 
-// ---------- shared progress state ----------
+// shared progress state
 
 interface Progress {
     running: boolean;
@@ -64,7 +64,7 @@ function stopDeleting() {
     Toasts.show({ message: "Stopping deletion...", type: Toasts.Type.MESSAGE, id: Toasts.genId() });
 }
 
-// ---------- deletion logic ----------
+// deletion logic
 
 async function withRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<T> {
     for (let attempt = 0; ; attempt++) {
@@ -139,7 +139,7 @@ async function deleteMessages(channelId: string, target: number) {
     }
 }
 
-// ---------- UI ----------
+// ui
 
 const PRESETS: { label: string; value: number; }[] = [
     { label: "10", value: 10 },
