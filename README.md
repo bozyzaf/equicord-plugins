@@ -6,6 +6,11 @@ Custom plugins for [Equicord](https://github.com/Equicord/Equicord).
 
 - **AutoDelete**: delete your own messages in a channel, with human-like delays, a progress view and a stop button.
 - **HypeSquadSwitcher**: change or remove your HypeSquad badge (Bravery, Brilliance, Balance) straight from the plugin settings.
+- **ChannelStats**: per-channel statistics (top users, message counts, activity by hour/day/month). Server stats are only collected for servers listed in the plugin's whitelist setting (comma-separated server IDs). DMs are controlled by a separate toggle.
+
+## Known Issues
+
+- **ChannelStats:** the stats are sometimes wiped on their own. I'm aware of it and working on a fix. Until then, I recommend exporting your statistics regularly (plugin settings → **Export Statistics**), once a day, so you can restore them with **Import Statistics**.
 
 ## Installation
 
