@@ -227,7 +227,7 @@ export const settings = definePluginSettings({
     },
     guildWhitelist: {
         type: OptionType.STRING,
-        description: "Comma-separated list of server IDs to track (leave empty to track all)",
+        description: "Comma-separated list of server IDs to track. Leave empty to track no servers.",
         default: "",
     },
     manageData: {

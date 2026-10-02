@@ -73,7 +73,8 @@ export default definePlugin({
                     .map(id => id.trim())
                     .filter(Boolean);
 
-                if (whitelist.length > 0 && (!channel.guild_id || !whitelist.includes(channel.guild_id))) return;
+                // empty whitelist = no servers are tracked
+                if (!channel.guild_id || !whitelist.includes(channel.guild_id)) return;
             }
 
             recordMessage(
