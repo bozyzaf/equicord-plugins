@@ -1,0 +1,71 @@
+.vc-cliphist-modal {
+    --ch-text: var(--text-default, var(--text-normal, #dbdee1));
+    --ch-text-strong: var(--text-strong, var(--header-primary, #f2f3f5));
+    --ch-muted: var(--text-muted, #949ba4);
+    --ch-surface: var(--background-surface-high, var(--background-secondary-alt, rgba(255, 255, 255, 0.05)));
+    --ch-border: var(--border-subtle, var(--background-modifier-accent, rgba(255, 255, 255, 0.1)));
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    color: var(--ch-text);
+}
+
+.vc-cliphist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.vc-cliphist-empty {
+    color: var(--ch-muted);
+    text-align: center;
+    padding: 24px 0;
+}
+
+.vc-cliphist-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: var(--ch-surface);
+    border: 1px solid var(--ch-border);
+    border-radius: 8px;
+}
+
+.vc-cliphist-row-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.vc-cliphist-text {
+    color: var(--ch-text-strong);
+    font-family: var(--font-code, monospace);
+    font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.vc-cliphist-meta {
+    color: var(--ch-muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.vc-cliphist-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.vc-cliphist-footer {
+    display: flex;
+    justify-content: flex-end;
+}
